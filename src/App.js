@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import './App.css';
 import Navigation from './components/Navigation/Navigation';
-import { Route } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 import UsersContainer from './components/Users/UsersContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import LoginContainer from './components/Login/LoginContainer';
@@ -12,9 +12,8 @@ import { initializeApp } from './redux/app-reducer';
 import Preloader from './common/preloader';
 import store from './redux/store-redux';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
 import { withSuspense } from './components/hoc/withSuspense';
-import { render } from 'react-dom';
+
 
 //import DialogsContainer from './components/Dialogs/DialogsContainer';
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
@@ -65,11 +64,11 @@ const AppContainer = compose(
 )(App);
 
 const AppWithRouter = (props) => {
-  return <BrowserRouter>
+  return <HashRouter>
     <Provider store={store}>
       <AppContainer />
     </Provider>
-  </BrowserRouter>
+  </HashRouter>
 }
 
 export default AppWithRouter;
