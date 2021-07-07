@@ -1,0 +1,16 @@
+.header{
+  grid-area: h;
+}
+
+.header img {
+  height: 80px;  
+}
+
+.loginBlock{
+  float: right;
+}
+
+.login{
+  margin-right: 15px;
+}
+

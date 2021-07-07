@@ -1,0 +1,10 @@
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+
+.errorField{
+    border-color: red;
+    border-width: 3px;
+}
